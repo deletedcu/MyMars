@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import {useDispatch} from 'react-redux';
 
 export const useDispatchWrap = func => {
   const dispatch = useDispatch();

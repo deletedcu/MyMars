@@ -1,15 +1,11 @@
-import React from "react";
-import {View, Text, Image, ImageSourcePropType} from "react-native";
-import {shape, string, number} from "prop-types";
-import styles from "./styles";
+import React from 'react';
+import {View, Text, Image, ImageSourcePropType} from 'react-native';
+import {shape, string} from 'prop-types';
+import styles from './styles';
 
 const Card = ({card}) => (
   <View style={styles.card} activeOpacity={1}>
-    <Image 
-      style={styles.image}
-      source={card.photo}
-      resizeMode="cover"
-    />
+    <Image style={styles.image} source={card.photo} resizeMode="cover" />
     <View style={styles.photoDescriptionContainer}>
       <Text style={styles.title}>{card.name}</Text>
       <Text style={styles.text}>{card.description}</Text>

@@ -1,7 +1,6 @@
-import { StyleSheet, Dimensions, Platform } from "react-native";
-const {width, height} = Dimensions.get("window");
-const isIphoneX =
-  Platform.OS === 'ios' && (height >= 812 || width >= 812);
+import {StyleSheet, Dimensions, Platform} from 'react-native';
+const {width, height} = Dimensions.get('window');
+const isIphoneX = Platform.OS === 'ios' && (height >= 812 || width >= 812);
 
 const itemWidth = width / 2 - 8;
 export default StyleSheet.create({
@@ -9,11 +8,11 @@ export default StyleSheet.create({
     flexDirection: 'column',
     width: itemWidth,
     height: 200,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "white",
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
     borderRadius: 8,
-    shadowColor: "black",
+    shadowColor: 'black',
     shadowOffset: {
       width: 0,
       height: 2,
@@ -26,45 +25,45 @@ export default StyleSheet.create({
   image: {
     borderRadius: 8,
     flex: 1,
-    width: "100%",
+    width: '100%',
   },
   photoDescriptionContainer: {
-    position: "absolute",
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
+    position: 'absolute',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
     left: 6,
     top: 10,
     right: 6,
   },
   lightBoxContainer: {
-    position: "absolute",
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
+    position: 'absolute',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
     left: 20,
     top: isIphoneX ? 60 : 40,
   },
   title: {
     fontSize: 18,
-    color: "white",
-    textShadowColor: "black",
+    color: 'white',
+    textShadowColor: 'black',
     textShadowRadius: 10,
   },
   text: {
     fontSize: 16,
-    color: "white",
-    textShadowColor: "black",
+    color: 'white',
+    textShadowColor: 'black',
     textShadowRadius: 10,
   },
   buttonContainer: {
-    position: "absolute",
+    position: 'absolute',
     top: 4,
     right: 0,
   },
   button: {
     width: 40,
     height: 40,
-    alignItems: "center",
-    justifyContent: "center",
+    alignItems: 'center',
+    justifyContent: 'center',
   },
   closeButton: {
     color: 'white',
@@ -74,9 +73,24 @@ export default StyleSheet.create({
     borderRadius: 3,
     textAlign: 'center',
     marginRight: 10,
-    marginTop: isIphoneX ? 40: 20,
+    marginTop: isIphoneX ? 40 : 20,
     alignSelf: 'flex-end',
-    textShadowColor: "black",
+    textShadowColor: 'black',
+    textShadowRadius: 10,
+  },
+  photoView: {
+    flex: 1,
+  },
+  title1: {
+    fontSize: 24,
+    color: 'white',
+    textShadowColor: 'black',
+    textShadowRadius: 10,
+  },
+  text1: {
+    fontSize: 18,
+    color: 'white',
+    textShadowColor: 'black',
     textShadowRadius: 10,
   },
 });

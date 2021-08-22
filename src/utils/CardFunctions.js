@@ -1,4 +1,4 @@
-import { photoCards } from "../constants";
+import {photoCards} from '../constants';
 
 export const getCards = () => {
   return new Promise((resolve, reject) => {

@@ -1,2 +1,2 @@
-export const LOADING = "LOADING";
-export const CARDS = "CARDS";
+export const LOADING = 'LOADING';
+export const CARDS = 'CARDS';

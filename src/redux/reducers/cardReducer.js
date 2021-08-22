@@ -1,4 +1,4 @@
-import * as cardTypes from "../types/cardTypes";
+import * as cardTypes from '../types/cardTypes';
 
 const initialState = {
   loading: true,

@@ -1,5 +1,3 @@
-import photoCards from "./photoCards";
+import photoCards from './photoCards';
 
-export {
-  photoCards,
-};
+export {photoCards};

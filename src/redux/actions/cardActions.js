@@ -1,5 +1,5 @@
-import * as cardTypes from "../types/cardTypes";
-import * as CardFunctions from "../../utils/CardFunctions";
+import * as cardTypes from '../types/cardTypes';
+import * as CardFunctions from '../../utils/CardFunctions';
 
 export const setLoading = status => {
   return dispatch => {

@@ -1,9 +1,6 @@
-import { useSelector } from "react-redux";
-import { useDispatchWrap } from "./utilHooks";
-import {
-  setLoading,
-  getCards,
-} from "../redux";
+import {useSelector} from 'react-redux';
+import {useDispatchWrap} from './utilHooks';
+import {setLoading, getCards} from '../redux';
 
 export const useLoading = () => {
   const {loading} = useSelector(state => state.card);

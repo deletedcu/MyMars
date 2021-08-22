@@ -1,3 +1,3 @@
 export default {
-  my_mars: "My Mars",
-}
+  my_mars: 'My Mars',
+};

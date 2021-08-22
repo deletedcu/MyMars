@@ -1,14 +1,13 @@
-import { StyleSheet, Dimensions } from "react-native";
-const {height} = Dimensions.get("window");
+import {StyleSheet} from 'react-native';
 
 export default StyleSheet.create({
   card: {
     flex: 1,
-    justifyContent: "center",
-    alignItems: "center",
-    backgroundColor: "white",
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: 'white',
     borderRadius: 8,
-    shadowColor: "black",
+    shadowColor: 'black',
     shadowOffset: {
       width: 0,
       height: 2,
@@ -20,25 +19,25 @@ export default StyleSheet.create({
   image: {
     borderRadius: 8,
     flex: 1,
-    width: "100%",
+    width: '100%',
   },
   photoDescriptionContainer: {
-    position: "absolute",
-    alignItems: "flex-start",
-    justifyContent: "flex-start",
+    position: 'absolute',
+    alignItems: 'flex-start',
+    justifyContent: 'flex-start',
     left: 20,
     top: 20,
   },
   title: {
     fontSize: 24,
-    color: "white",
-    textShadowColor: "black",
+    color: 'white',
+    textShadowColor: 'black',
     textShadowRadius: 10,
   },
   text: {
     fontSize: 18,
-    color: "white",
-    textShadowColor: "black",
+    color: 'white',
+    textShadowColor: 'black',
     textShadowRadius: 10,
   },
 });

@@ -1,10 +1,6 @@
-import { useSelector } from "react-redux";
-import { useDispatchWrap } from "./utilHooks";
-import {
-  getFavorites,
-  setFavorite,
-  setUnFavorite,
-} from "../redux";
+import {useSelector} from 'react-redux';
+import {useDispatchWrap} from './utilHooks';
+import {getFavorites, setFavorite, setUnFavorite} from '../redux';
 
 export const useFavorites = () => {
   const {favorites} = useSelector(state => state.favorite);
