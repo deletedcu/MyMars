@@ -21,7 +21,7 @@ const FavoriteScreen = () => {
       <View style={styles.container}>
         <FlatList
           data={favorites}
-          keyExtractor={item => item.key}
+          keyExtractor={item => item.id}
           renderItem={card => (
             <FavoriteItem
               card={card.item}

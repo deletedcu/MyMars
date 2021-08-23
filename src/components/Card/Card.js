@@ -1,14 +1,18 @@
 import React from 'react';
-import {View, Text, Image, ImageSourcePropType} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import {shape, string} from 'prop-types';
 import styles from './styles';
 
 const Card = ({card}) => (
   <View style={styles.card} activeOpacity={1}>
-    <Image style={styles.image} source={card.photo} resizeMode="cover" />
+    <Image
+      style={styles.image}
+      source={{uri: card.img_src}}
+      resizeMode="cover"
+    />
     <View style={styles.photoDescriptionContainer}>
-      <Text style={styles.title}>{card.name}</Text>
-      <Text style={styles.text}>{card.description}</Text>
+      <Text style={styles.title}>{card.title}</Text>
+      <Text style={styles.text}>{card.name}</Text>
       <Text style={styles.text}>{card.date}</Text>
     </View>
   </View>
@@ -16,9 +20,9 @@ const Card = ({card}) => (
 
 Card.propTypes = {
   card: shape({
-    photo: ImageSourcePropType,
+    img_src: string,
+    title: string,
     name: string,
-    description: string,
     date: string,
   }).isRequired,
 };

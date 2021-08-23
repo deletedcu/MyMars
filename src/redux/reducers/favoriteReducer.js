@@ -11,13 +11,13 @@ const favoriteReducer = (state = initialState, action) => {
       return {...state, favorites: state.favorites};
     case favoriteTypes.ADD:
       let newFavorites = state.favorites.filter(
-        item => item.key !== payload.card.key,
+        item => item.id !== payload.card.id,
       );
       newFavorites.push(payload.card);
       return {...state, favorites: newFavorites};
     case favoriteTypes.REMOVE:
       newFavorites = state.favorites.filter(
-        item => item.key !== payload.card.key,
+        item => item.id !== payload.card.id,
       );
       return {...state, favorites: newFavorites};
     default:

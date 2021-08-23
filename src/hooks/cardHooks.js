@@ -9,7 +9,7 @@ export const useLoading = () => {
 };
 
 export const useCards = () => {
-  const {cards} = useSelector(state => state.card);
+  const {cards, page} = useSelector(state => state.card);
   const getCardsF = useDispatchWrap(getCards);
-  return {cards, getCardsF};
+  return {cards, page, getCardsF};
 };

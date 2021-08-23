@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  Image,
-  ImageSourcePropType,
-  TouchableOpacity,
-  Dimensions,
-} from 'react-native';
+import {View, Text, Image, TouchableOpacity, Dimensions} from 'react-native';
 import Lightbox from 'react-native-lightbox';
 import PhotoView from 'react-native-photo-view';
 import {shape, string} from 'prop-types';
@@ -20,17 +13,17 @@ const FavoriteItem = ({card, onPress}) => {
     <View style={{width, height}}>
       <PhotoView
         style={styles.photoView}
-        source={card.photo}
+        source={{uri: card.img_src}}
         minimumZoomScale={1}
         maximumZoomScale={10}
         androidScaleType="fitCenter"
       />
       <View style={styles.lightBoxContainer}>
         <Text style={styles.title1} numberOfLines={1} ellipsizeMode="tail">
-          {card.name}
+          {card.title}
         </Text>
         <Text style={styles.text1} numberOfLines={1} ellipsizeMode="tail">
-          {card.description}
+          {card.name}
         </Text>
         <Text style={styles.text1} numberOfLines={1} ellipsizeMode="tail">
           {card.date}
@@ -51,13 +44,17 @@ const FavoriteItem = ({card, onPress}) => {
       swipeToDismiss={true}
       underlayColor="transparent">
       <View style={styles.card} activeOpacity={1}>
-        <Image style={styles.image} source={card.photo} resizeMode="cover" />
+        <Image
+          style={styles.image}
+          source={{uri: card.img_src}}
+          resizeMode="cover"
+        />
         <View style={styles.photoDescriptionContainer}>
           <Text style={styles.title} numberOfLines={1} ellipsizeMode="tail">
-            {card.name}
+            {card.title}
           </Text>
           <Text style={styles.text} numberOfLines={1} ellipsizeMode="tail">
-            {card.description}
+            {card.name}
           </Text>
           <Text style={styles.text} numberOfLines={1} ellipsizeMode="tail">
             {card.date}
@@ -75,9 +72,9 @@ const FavoriteItem = ({card, onPress}) => {
 
 FavoriteItem.propTypes = {
   card: shape({
-    photo: ImageSourcePropType,
+    img_src: string,
+    title: string,
     name: string,
-    description: string,
     date: string,
   }).isRequired,
 };

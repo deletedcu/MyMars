@@ -7,3 +7,16 @@ export const getCards = () => {
     }, 2000);
   });
 };
+
+export const parseCards = data => {
+  const newData = data.map(item => {
+    return {
+      id: item.id,
+      title: item.rover.name,
+      name: item.camera.full_name,
+      date: item.earth_date,
+      img_src: item.img_src,
+    };
+  });
+  return newData;
+};

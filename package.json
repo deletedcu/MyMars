@@ -12,6 +12,7 @@
   "dependencies": {
     "@react-navigation/native": "^6.0.2",
     "@react-navigation/stack": "^6.0.7",
+    "axios": "^0.21.1",
     "deepmerge": "^4.2.2",
     "i18n-js": "^3.8.0",
     "prop-types": "^15.7.2",

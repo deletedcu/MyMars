@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {TouchableOpacity, View} from 'react-native';
+import {TouchableOpacity, View, Text} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Swiper from 'react-native-deck-swiper';
 import {
@@ -18,17 +18,29 @@ const HomeScreen = ({navigation}) => {
   const swiperRef = useRef(null);
   const [previous, setPrevious] = useState(false);
   const [swipedAllCards, setSwipedAllCards] = useState(false);
+  const [cardIndex, setCardIndex] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(1);
 
   const {loading, setLoadingF} = useLoading();
-  const {cards, getCardsF} = useCards();
+  const {cards, page, getCardsF} = useCards();
   const {setFavoriteF, setUnFavoriteF} = useFavorites();
 
   useEffect(() => {
-    setLoadingF(true);
-    getCardsF();
+    if (page === 1) {
+      setLoadingF(true);
+      getCardsF(page);
+    }
+    if (cards.length > 0) {
+      setSwipedAllCards(false);
+    }
   }, [cards]);
 
-  const handleOnSwipedAllCards = () => setSwipedAllCards(true);
+  const handleOnSwipedAllCards = () => {
+    setCardIndex(cards.length);
+    setSwipedAllCards(true);
+    setLoadingF();
+    getCardsF(page);
+  };
   const handleOnSwipedLeft = () => swiperRef.current.swipeLeft();
   const handleOnSwipedRight = () => swiperRef.current.swipeRight();
   const handleOnSwipeBack = () =>
@@ -43,7 +55,12 @@ const HomeScreen = ({navigation}) => {
         const card = cards[previousCardIndex - 1];
         setUnFavoriteF(card);
       }
+      setCurrentIndex(previousCardIndex);
     });
+
+  const handleOnSwiped = index => {
+    setCurrentIndex(index + 2);
+  };
 
   const handleOnSwipedLeftCallback = index => {
     if (!previous) {
@@ -95,13 +112,15 @@ const HomeScreen = ({navigation}) => {
           <View style={styles.container}>
             <Swiper
               ref={swiperRef}
-              cardIndex={0}
+              cardIndex={cardIndex}
               cards={cards}
-              keyExtractor={card => card.key}
+              keyExtractor={card => card.id}
+              key={cards.length}
               cardVerticalMargin={80}
               renderCard={card => <Card card={card} />}
               backgroundColor="transparent"
               onSwipedAll={handleOnSwipedAllCards}
+              onSwiped={handleOnSwiped}
               onSwipedLeft={handleOnSwipedLeftCallback}
               onSwipedRight={handleOnSwipedRightCallback}
               verticalSwipe={false}
@@ -136,6 +155,9 @@ const HomeScreen = ({navigation}) => {
                   color="white"
                   onPress={handleOnSwipedLeft}
                 />
+                <Text style={styles.indexText}>
+                  {`${currentIndex} / ${cards.length} cards`}
+                </Text>
                 <FAB
                   style={styles.fabLike}
                   icon="thumb-up-outline"

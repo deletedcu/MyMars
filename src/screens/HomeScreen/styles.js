@@ -73,8 +73,14 @@ export default StyleSheet.create({
   bottomContainer: {
     position: 'absolute',
     flexDirection: 'row',
+    alignItems: 'flex-end',
+    justifyContent: 'center',
     left: 0,
     right: 0,
     bottom: 0,
+  },
+  indexText: {
+    marginBottom: 16,
+    opacity: 0.5,
   },
 });
