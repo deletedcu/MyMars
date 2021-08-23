@@ -2,19 +2,13 @@ import React, {useEffect, useRef, useState} from 'react';
 import {TouchableOpacity, View, Text, Dimensions} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Swiper from 'react-native-deck-swiper';
-import {
-  ActivityIndicator,
-  Button,
-  FAB,
-  Portal,
-  Title,
-} from 'react-native-paper';
+import {ActivityIndicator, FAB, Portal} from 'react-native-paper';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {Card, OverlayLabel} from '../../components';
 import {useLoading, useCards, useFavorites} from '../../hooks';
 import styles from './styles';
 
-const {width} = Dimensions.get("window");
+const {width} = Dimensions.get('window');
 
 const HomeScreen = ({navigation}) => {
   const swiperRef = useRef(null);
@@ -81,15 +75,19 @@ const HomeScreen = ({navigation}) => {
   const renderHeader = () => {
     return (
       <View style={styles.headerContainer}>
-        <Button
-          mode="text"
-          color="red"
-          uppercase={false}
-          onPress={handleOnSwipeBack}
-          disabled={!previous}>
-          Undo
-        </Button>
-        <Title>My Mars</Title>
+        <TouchableOpacity
+          style={styles.headerLeftButton}
+          disabled={!previous}
+          onPress={handleOnSwipeBack}>
+          <Text
+            style={[
+              styles.headerLeftButtonText,
+              !previous && styles.disableText,
+            ]}>
+            Undo
+          </Text>
+        </TouchableOpacity>
+        <Text style={styles.headerTitle}>My Mars</Text>
         <TouchableOpacity
           style={styles.headerRightButton}
           onPress={() => navigation.push('Favorite')}>
@@ -132,8 +130,8 @@ const HomeScreen = ({navigation}) => {
               stackSeparation={-50}
               stackScale={10}
               swipeAnimationDuration={800}
-              inputRotationRange={[-width/2, 0, width/2]}
-              outputRotationRange={["-2deg", "0deg", "2deg"]}
+              inputRotationRange={[-width / 2, 0, width / 2]}
+              outputRotationRange={['-2deg', '0deg', '2deg']}
               overlayLabels={{
                 left: {
                   title: 'NOPE',

@@ -29,15 +29,19 @@ export default StyleSheet.create({
     top: 20,
   },
   title: {
-    fontSize: 24,
+    fontSize: 21,
+    fontFamily: 'PT-Root-UI_Bold',
+    fontWeight: '500',
     color: 'white',
     textShadowColor: 'black',
-    textShadowRadius: 10,
+    textShadowRadius: 6,
   },
   text: {
-    fontSize: 18,
+    fontSize: 16,
+    fontFamily: 'PT-Root-UI_Medium',
+    fontWeight: 'normal',
     color: 'white',
     textShadowColor: 'black',
-    textShadowRadius: 10,
+    textShadowRadius: 4,
   },
 });

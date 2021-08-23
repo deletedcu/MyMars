@@ -1,5 +1,6 @@
 import 'react-native-gesture-handler';
 import React, {useCallback, useMemo, useState} from 'react';
+import {StyleSheet} from 'react-native';
 import {
   NavigationContainer,
   DefaultTheme as NavigationDefaultTheme,
@@ -48,10 +49,23 @@ export default function Routes() {
               component={HomeScreen}
               options={{headerShown: false}}
             />
-            <Stack.Screen name="Favorite" component={FavoriteScreen} />
+            <Stack.Screen
+              name="Favorite"
+              component={FavoriteScreen}
+              options={{headerTitleStyle: styles.headerTitle}}
+            />
           </Stack.Navigator>
         </NavigationContainer>
       </PaperProvider>
     </PreferencesContext.Provider>
   );
 }
+
+const styles = StyleSheet.create({
+  headerTitle: {
+    fontSize: 20,
+    fontFamily: 'PT-Root-UI_Bold',
+    fontWeight: '500',
+    color: 'rgb(28, 28, 30)',
+  },
+});

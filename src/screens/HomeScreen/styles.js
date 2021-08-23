@@ -22,6 +22,28 @@ export default StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  headerTitle: {
+    fontSize: 20,
+    fontFamily: 'PT-Root-UI_Bold',
+    fontWeight: '500',
+    color: 'rgb(28, 28, 30)',
+  },
+  headerLeftButton: {
+    width: 60,
+    height: 40,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginLeft: 8,
+  },
+  headerLeftButtonText: {
+    fontSize: 16,
+    fontFamily: 'PT-Root-UI_Bold',
+    fontWeight: '500',
+    color: 'red',
+  },
+  disableText: {
+    color: '#cecece',
+  },
   overlayLabelLeft: {
     backgroundColor: 'transparent',
     borderColor: 'red',
@@ -80,7 +102,10 @@ export default StyleSheet.create({
     bottom: 0,
   },
   indexText: {
+    fontSize: 14,
+    fontFamily: 'PT-Root-UI_Regular',
+    fontWeight: 'normal',
     marginBottom: 16,
-    opacity: 0.5,
+    color: '#818181',
   },
 });

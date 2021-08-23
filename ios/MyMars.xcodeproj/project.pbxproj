@@ -28,6 +28,10 @@
 		D235DCD748094217AD65C4C6 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 595D91B835B5495DBFB098E8 /* Octicons.ttf */; };
 		8CEEDD5A4DEE4FA19967C314 /* SimpleLineIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9A1346BC3D6946909D4E6A5E /* SimpleLineIcons.ttf */; };
 		082F87A1FC3A4718915E21ED /* Zocial.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 67EFB58508864CA3AD114E23 /* Zocial.ttf */; };
+		B071598A55144E51A1853CF9 /* PT-Root-UI_Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9D58AB186C73498BA32B56BD /* PT-Root-UI_Bold.ttf */; };
+		C20ADA4B42E746888B2E1982 /* PT-Root-UI_Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9798F08EE46649DCBDBC863C /* PT-Root-UI_Light.ttf */; };
+		A3E78F95A96A48339F202A95 /* PT-Root-UI_Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 038747A288CB4F20A0C70E21 /* PT-Root-UI_Medium.ttf */; };
+		D68DEA4CBD6B417DA1784CC3 /* PT-Root-UI_Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = A6A30274033F46939121CDE9 /* PT-Root-UI_Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -68,6 +72,10 @@
 		595D91B835B5495DBFB098E8 /* Octicons.ttf */ = {isa = PBXFileReference; name = "Octicons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Octicons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		9A1346BC3D6946909D4E6A5E /* SimpleLineIcons.ttf */ = {isa = PBXFileReference; name = "SimpleLineIcons.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/SimpleLineIcons.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		67EFB58508864CA3AD114E23 /* Zocial.ttf */ = {isa = PBXFileReference; name = "Zocial.ttf"; path = "../node_modules/react-native-vector-icons/Fonts/Zocial.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9D58AB186C73498BA32B56BD /* PT-Root-UI_Bold.ttf */ = {isa = PBXFileReference; name = "PT-Root-UI_Bold.ttf"; path = "../src/assets/fonts/PT-Root-UI_Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		9798F08EE46649DCBDBC863C /* PT-Root-UI_Light.ttf */ = {isa = PBXFileReference; name = "PT-Root-UI_Light.ttf"; path = "../src/assets/fonts/PT-Root-UI_Light.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		038747A288CB4F20A0C70E21 /* PT-Root-UI_Medium.ttf */ = {isa = PBXFileReference; name = "PT-Root-UI_Medium.ttf"; path = "../src/assets/fonts/PT-Root-UI_Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		A6A30274033F46939121CDE9 /* PT-Root-UI_Regular.ttf */ = {isa = PBXFileReference; name = "PT-Root-UI_Regular.ttf"; path = "../src/assets/fonts/PT-Root-UI_Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -176,6 +184,10 @@
 				595D91B835B5495DBFB098E8 /* Octicons.ttf */,
 				9A1346BC3D6946909D4E6A5E /* SimpleLineIcons.ttf */,
 				67EFB58508864CA3AD114E23 /* Zocial.ttf */,
+				9D58AB186C73498BA32B56BD /* PT-Root-UI_Bold.ttf */,
+				9798F08EE46649DCBDBC863C /* PT-Root-UI_Light.ttf */,
+				038747A288CB4F20A0C70E21 /* PT-Root-UI_Medium.ttf */,
+				A6A30274033F46939121CDE9 /* PT-Root-UI_Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -287,6 +299,10 @@
 				D235DCD748094217AD65C4C6 /* Octicons.ttf in Resources */,
 				8CEEDD5A4DEE4FA19967C314 /* SimpleLineIcons.ttf in Resources */,
 				082F87A1FC3A4718915E21ED /* Zocial.ttf in Resources */,
+				B071598A55144E51A1853CF9 /* PT-Root-UI_Bold.ttf in Resources */,
+				C20ADA4B42E746888B2E1982 /* PT-Root-UI_Light.ttf in Resources */,
+				A3E78F95A96A48339F202A95 /* PT-Root-UI_Medium.ttf in Resources */,
+				D68DEA4CBD6B417DA1784CC3 /* PT-Root-UI_Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
