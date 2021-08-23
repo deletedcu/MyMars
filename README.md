@@ -13,6 +13,7 @@ Tinder style app using NASA's Curiosity rover API with React Native
 ```
 yarn
 react-native link
+react-native start
 ```
 
 ## Run
