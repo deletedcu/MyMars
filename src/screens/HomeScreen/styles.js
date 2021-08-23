@@ -37,8 +37,8 @@ export default StyleSheet.create({
   },
   headerLeftButtonText: {
     fontSize: 16,
-    fontFamily: 'PT-Root-UI_Bold',
-    fontWeight: '500',
+    fontFamily: 'PT-Root-UI_Medium',
+    fontWeight: '700',
     color: 'red',
   },
   disableText: {

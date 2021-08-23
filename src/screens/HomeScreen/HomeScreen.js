@@ -2,9 +2,9 @@ import React, {useEffect, useRef, useState} from 'react';
 import {TouchableOpacity, View, Text, Dimensions} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Swiper from 'react-native-deck-swiper';
-import {ActivityIndicator, FAB, Portal} from 'react-native-paper';
+import {ActivityIndicator, Portal} from 'react-native-paper';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
-import {Card, OverlayLabel} from '../../components';
+import {Card, OverlayLabel, IconButton} from '../../components';
 import {useLoading, useCards, useFavorites} from '../../hooks';
 import styles from './styles';
 
@@ -12,9 +12,10 @@ const {width} = Dimensions.get('window');
 
 const HomeScreen = ({navigation}) => {
   const swiperRef = useRef(null);
+  const dislikeButton = useRef(null);
+  const likeButton = useRef(null);
   const [previous, setPrevious] = useState(false);
   const [swipedAllCards, setSwipedAllCards] = useState(false);
-  const [cardIndex, setCardIndex] = useState(0);
   const [currentIndex, setCurrentIndex] = useState(1);
 
   const {loading, setLoadingF} = useLoading();
@@ -32,7 +33,6 @@ const HomeScreen = ({navigation}) => {
   }, [cards]);
 
   const handleOnSwipedAllCards = () => {
-    setCardIndex(cards.length);
     setSwipedAllCards(true);
     setLoadingF();
     getCardsF(page);
@@ -56,6 +56,8 @@ const HomeScreen = ({navigation}) => {
 
   const handleOnSwiped = index => {
     setCurrentIndex(index + 2);
+    dislikeButton.current.reset();
+    likeButton.current.reset();
   };
 
   const handleOnSwipedLeftCallback = index => {
@@ -70,6 +72,11 @@ const HomeScreen = ({navigation}) => {
     }
     const card = cards[index];
     setFavoriteF(card);
+  };
+
+  const handleOnSwiping = (x, y) => {
+    dislikeButton.current.animateX(-x);
+    likeButton.current.animateX(x);
   };
 
   const renderHeader = () => {
@@ -91,7 +98,7 @@ const HomeScreen = ({navigation}) => {
         <TouchableOpacity
           style={styles.headerRightButton}
           onPress={() => navigation.push('Favorite')}>
-          <FontAwesome5 name="heart" size={20} color="red" />
+          <FontAwesome5 name="heart" size={21} color="red" />
         </TouchableOpacity>
       </View>
     );
@@ -113,10 +120,11 @@ const HomeScreen = ({navigation}) => {
           <View style={styles.container}>
             <Swiper
               ref={swiperRef}
-              cardIndex={cardIndex}
+              cardIndex={currentIndex - 1}
               cards={cards}
               keyExtractor={card => card.id}
               key={cards.length}
+              marginTop={20}
               cardVerticalMargin={80}
               renderCard={card => <Card card={card} />}
               backgroundColor="transparent"
@@ -124,14 +132,15 @@ const HomeScreen = ({navigation}) => {
               onSwiped={handleOnSwiped}
               onSwipedLeft={handleOnSwipedLeftCallback}
               onSwipedRight={handleOnSwipedRightCallback}
+              onSwiping={handleOnSwiping}
               disableBottomSwipe={true}
               disableTopSwipe={true}
-              stackSize={4}
+              stackSize={3}
               stackSeparation={-50}
               stackScale={10}
               swipeAnimationDuration={800}
               inputRotationRange={[-width / 2, 0, width / 2]}
-              outputRotationRange={['-2deg', '0deg', '2deg']}
+              outputRotationRange={['0deg', '0deg', '0deg']}
               overlayLabels={{
                 left: {
                   title: 'NOPE',
@@ -155,18 +164,20 @@ const HomeScreen = ({navigation}) => {
             />
             {!swipedAllCards && (
               <View style={styles.bottomContainer}>
-                <FAB
-                  style={styles.fabDislike}
-                  icon="thumb-down-outline"
+                <IconButton
+                  ref={dislikeButton}
+                  buttonStyle={styles.fabDislike}
+                  name="thumbs-down"
                   color="white"
                   onPress={handleOnSwipedLeft}
                 />
                 <Text style={styles.indexText}>
                   {`${currentIndex} / ${cards.length} cards`}
                 </Text>
-                <FAB
-                  style={styles.fabLike}
-                  icon="thumb-up-outline"
+                <IconButton
+                  ref={likeButton}
+                  buttonStyle={styles.fabLike}
+                  name="thumbs-up"
                   color="white"
                   onPress={handleOnSwipedRight}
                 />
