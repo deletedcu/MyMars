@@ -23,7 +23,7 @@
     "react-native-lightbox": "^0.8.1",
     "react-native-localize": "^2.1.1",
     "react-native-paper": "^4.9.2",
-    "react-native-photo-view": "^1.5.2",
+    "react-native-photo-view": "https://github.com/alwx/react-native-photo-view",
     "react-native-safe-area-context": "^3.3.0",
     "react-native-screens": "^3.5.0",
     "react-native-svg": "^12.1.1",
