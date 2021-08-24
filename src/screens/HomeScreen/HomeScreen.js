@@ -7,6 +7,7 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import {useTheme} from '@react-navigation/native';
 import {Card, OverlayLabel, IconButton} from '../../components';
 import {useLoading, useCards, useFavorites} from '../../hooks';
+import i18n from '../../locales';
 import styles from './styles';
 
 const {width} = Dimensions.get('window');
@@ -95,10 +96,10 @@ const HomeScreen = ({navigation}) => {
               {color: colors.red},
               !previous && styles.disableText,
             ]}>
-            Undo
+            {i18n.t('undo')}
           </Text>
         </TouchableOpacity>
-        <Text style={styles.headerTitle}>My Mars</Text>
+        <Text style={styles.headerTitle}>{i18n.t('my_mars')}</Text>
         <TouchableOpacity
           style={styles.headerRightButton}
           onPress={() => navigation.push('Favorite')}>
