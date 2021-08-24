@@ -20,7 +20,7 @@
     "react-native": "0.65.1",
     "react-native-deck-swiper": "https://github.com/curest0x1021/react-native-deck-swiper",
     "react-native-gesture-handler": "^1.10.3",
-    "react-native-lightbox": "^0.8.1",
+    "react-native-lightbox": "https://github.com/curest0x1021/react-native-lightbox",
     "react-native-localize": "^2.1.1",
     "react-native-paper": "^4.9.2",
     "react-native-photo-view": "https://github.com/alwx/react-native-photo-view",
