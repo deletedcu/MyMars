@@ -1,7 +1,8 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity, Dimensions} from 'react-native';
+import {View, Text, TouchableOpacity, Dimensions} from 'react-native';
 import Lightbox from 'react-native-lightbox';
 import PhotoView from 'react-native-photo-view';
+import FastImage from 'react-native-fast-image';
 import {shape, string} from 'prop-types';
 import {useTheme} from '@react-navigation/native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
@@ -47,10 +48,10 @@ const FavoriteItem = ({card, onPress}) => {
       swipeToDismiss={true}
       underlayColor="transparent">
       <View style={styles.card} activeOpacity={1}>
-        <Image
+        <FastImage
           style={styles.image}
           source={{uri: card.img_src}}
-          resizeMode="cover"
+          resizeMode={FastImage.resizeMode.cover}
         />
         <View style={styles.photoDescriptionContainer}>
           <Text style={styles.title} numberOfLines={1} ellipsizeMode="tail">

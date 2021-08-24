@@ -1,14 +1,15 @@
 import React from 'react';
-import {View, Text, Image} from 'react-native';
+import {View, Text} from 'react-native';
 import {shape, string} from 'prop-types';
+import FastImage from 'react-native-fast-image';
 import styles from './styles';
 
 const Card = ({card}) => (
   <View style={styles.card} activeOpacity={1}>
-    <Image
+    <FastImage
       style={styles.image}
       source={{uri: card.img_src}}
-      resizeMode="cover"
+      resizeMode={FastImage.resizeMode.cover}
     />
     <View style={styles.photoDescriptionContainer}>
       <Text style={styles.title}>{card.title}</Text>
