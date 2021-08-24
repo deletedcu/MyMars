@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {TouchableOpacity, View, Text, Dimensions} from 'react-native';
+import {TouchableOpacity, View, Text, Dimensions, Platform} from 'react-native';
 import {SafeAreaView} from 'react-native-safe-area-context';
 import Swiper from 'react-native-deck-swiper';
 import {ActivityIndicator, Portal} from 'react-native-paper';
@@ -10,7 +10,8 @@ import {useLoading, useCards, useFavorites} from '../../hooks';
 import i18n from '../../locales';
 import styles from './styles';
 
-const {width} = Dimensions.get('window');
+const {width, height} = Dimensions.get('window');
+const isIphoneX = Platform.OS === 'ios' && (height >= 812 || width >= 812);
 
 const HomeScreen = ({navigation}) => {
   const {colors} = useTheme();
@@ -117,7 +118,7 @@ const HomeScreen = ({navigation}) => {
             <ActivityIndicator
               animating={true}
               size="large"
-              color="red"
+              color={colors.red}
               style={styles.loadingContainer}
             />
           </Portal>
@@ -130,6 +131,7 @@ const HomeScreen = ({navigation}) => {
               keyExtractor={card => card.id}
               key={cards.length}
               marginTop={20}
+              marginBottom={isIphoneX ? 60 : 0}
               cardVerticalMargin={80}
               renderCard={card => <Card card={card} />}
               backgroundColor="transparent"
@@ -141,7 +143,7 @@ const HomeScreen = ({navigation}) => {
               disableBottomSwipe={true}
               disableTopSwipe={true}
               stackSize={3}
-              stackSeparation={-40}
+              stackSeparation={-45}
               stackScale={8}
               stackAnimationFriction={7}
               stackAnimationTension={40}

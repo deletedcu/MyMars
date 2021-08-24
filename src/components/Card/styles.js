@@ -30,7 +30,7 @@ export default StyleSheet.create({
   },
   title: {
     fontSize: 21,
-    fontFamily: 'PT-Root-UI_Bold',
+    fontFamily: 'PT Root UI Bold',
     fontWeight: '500',
     color: 'white',
     textShadowColor: 'black',
@@ -38,7 +38,7 @@ export default StyleSheet.create({
   },
   text: {
     fontSize: 16,
-    fontFamily: 'PT-Root-UI_Medium',
+    fontFamily: 'PT Root UI Medium',
     fontWeight: 'normal',
     color: 'white',
     textShadowColor: 'black',

@@ -66,7 +66,10 @@ export default function Routes() {
             <Stack.Screen
               name="Favorite"
               component={FavoriteScreen}
-              options={{headerTitleStyle: styles.headerTitle}}
+              options={{
+                headerTitleStyle: styles.headerTitle,
+                headerBackTitleVisible: false,
+              }}
             />
           </Stack.Navigator>
         </NavigationContainer>
@@ -78,7 +81,7 @@ export default function Routes() {
 const styles = StyleSheet.create({
   headerTitle: {
     fontSize: 20,
-    fontFamily: 'PT-Root-UI_Bold',
+    fontFamily: 'PT Root UI Bold',
     fontWeight: '500',
     color: 'rgb(28, 28, 30)',
   },

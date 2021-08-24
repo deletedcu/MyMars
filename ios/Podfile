@@ -12,8 +12,6 @@ target 'MyMars' do
     :hermes_enabled => false
   )
 
-  pod 'react-native-photo-view', :path => '../node_modules/react-native-photo-view'
-
   target 'MyMarsTests' do
     inherit! :complete
     # Pods for testing

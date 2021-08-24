@@ -24,7 +24,7 @@ export default StyleSheet.create({
   },
   headerTitle: {
     fontSize: 20,
-    fontFamily: 'PT-Root-UI_Bold',
+    fontFamily: 'PT Root UI Bold',
     fontWeight: '500',
     color: 'rgb(28, 28, 30)',
   },
@@ -37,7 +37,7 @@ export default StyleSheet.create({
   },
   headerLeftButtonText: {
     fontSize: 16,
-    fontFamily: 'PT-Root-UI_Medium',
+    fontFamily: 'PT Root UI Medium',
     fontWeight: '700',
     color: 'red',
   },
@@ -103,7 +103,7 @@ export default StyleSheet.create({
   },
   indexText: {
     fontSize: 14,
-    fontFamily: 'PT-Root-UI_Regular',
+    fontFamily: 'PT Root UI Medium',
     fontWeight: 'normal',
     marginBottom: 16,
     color: '#818181',

@@ -44,7 +44,7 @@ export default StyleSheet.create({
   },
   title: {
     fontSize: 18,
-    fontFamily: 'PT-Root-UI_Bold',
+    fontFamily: 'PT Root UI Bold',
     fontWeight: '700',
     color: 'white',
     textShadowColor: 'black',
@@ -52,7 +52,7 @@ export default StyleSheet.create({
   },
   text: {
     fontSize: 14,
-    fontFamily: 'PT-Root-UI_Medium',
+    fontFamily: 'PT Root UI Medium',
     fontWeight: 'normal',
     color: 'white',
     textShadowColor: 'black',
@@ -71,7 +71,7 @@ export default StyleSheet.create({
   },
   closeButton: {
     fontSize: 16,
-    fontFamily: 'PT-Root-UI_Medium',
+    fontFamily: 'PT Root UI Medium',
     fontWeight: 'normal',
     color: 'white',
     borderWidth: 1,
@@ -90,7 +90,7 @@ export default StyleSheet.create({
   },
   title1: {
     fontSize: 21,
-    fontFamily: 'PT-Root-UI_Bold',
+    fontFamily: 'PT Root UI Bold',
     fontWeight: '500',
     color: 'white',
     textShadowColor: 'black',
@@ -98,7 +98,7 @@ export default StyleSheet.create({
   },
   text1: {
     fontSize: 16,
-    fontFamily: 'PT-Root-UI_Medium',
+    fontFamily: 'PT Root UI Medium',
     fontWeight: 'normal',
     color: 'white',
     textShadowColor: 'black',
