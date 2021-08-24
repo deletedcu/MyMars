@@ -13,9 +13,9 @@ class IconButton extends PureComponent {
     this.pan = new Animated.ValueXY();
     this.animation = new Animated.Value(0);
     this.inputOpacityRangeX = [-width / 2, -width / 3, 0, width / 3, width / 2];
-    this.outputOpacityRangeX = [0.6, 0.8, 1, 0.8, 0.6];
+    this.outputOpacityRangeX = [0.4, 0.6, 1, 0.6, 0.4];
     this.inputRangeX = [0, 1];
-    this.outputRangeX = [1, 1.8];
+    this.outputRangeX = [1, 1.5];
     this.opacity = 1;
     this.scale = this.animation.interpolate({
       inputRange: this.inputRangeX,
@@ -25,10 +25,15 @@ class IconButton extends PureComponent {
   }
 
   animateX = x => {
-    if (Math.abs(this.previousX - x) < 30) {
+    if (Math.abs(this.previousX - x) < 10) {
       return;
     }
-    if (x < 0) {
+    if (x == 0) {
+      this.pan.setValue({x: 0, y: 0});
+      this.opacity = this.interpolateOpacity();
+      this.animation.setValue(0);
+      this.scale = this.interpolateScale();
+    } else if (x < 0) {
       this.pan.setValue({x: x, y: 0});
       this.opacity = this.interpolateOpacity();
     } else {
@@ -39,8 +44,7 @@ class IconButton extends PureComponent {
   };
 
   reset = () => {
-    this.animation.setValue(0);
-    this.pan.setValue({x: 0, y: 0});
+    this.animateX(0);
   };
 
   interpolateOpacity = () => {
@@ -76,6 +80,7 @@ class IconButton extends PureComponent {
   render() {
     return (
       <Animated.View
+        useNativeDriver
         style={[
           styles.button,
           this.props.buttonStyle,

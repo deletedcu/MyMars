@@ -19,8 +19,22 @@ import FavoriteScreen from '../screens/FavoriteScreen/FavoriteScreen';
 
 const Stack = createStackNavigator();
 
-const CombinedDefaultTheme = merge(PaperDefaultTheme, NavigationDefaultTheme);
-const CombinedDarkTheme = merge(PaperDarkTheme, NavigationDarkTheme);
+const CustomDefaultTheme = {
+  ...NavigationDefaultTheme,
+  colors: {
+    ...NavigationDefaultTheme.colors,
+    red: 'rgb(235, 87, 87)',
+  },
+};
+const CustomDarkTheme = {
+  ...NavigationDarkTheme,
+  colors: {
+    ...NavigationDarkTheme.colors,
+    red: 'rgb(235, 87, 87)',
+  },
+};
+const CombinedDefaultTheme = merge(PaperDefaultTheme, CustomDefaultTheme);
+const CombinedDarkTheme = merge(PaperDarkTheme, CustomDarkTheme);
 
 export default function Routes() {
   const [isThemeDark, setThemeDark] = useState(false);

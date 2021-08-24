@@ -4,6 +4,7 @@ import {SafeAreaView} from 'react-native-safe-area-context';
 import Swiper from 'react-native-deck-swiper';
 import {ActivityIndicator, Portal} from 'react-native-paper';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import {useTheme} from '@react-navigation/native';
 import {Card, OverlayLabel, IconButton} from '../../components';
 import {useLoading, useCards, useFavorites} from '../../hooks';
 import styles from './styles';
@@ -11,6 +12,7 @@ import styles from './styles';
 const {width} = Dimensions.get('window');
 
 const HomeScreen = ({navigation}) => {
+  const {colors} = useTheme();
   const swiperRef = useRef(null);
   const dislikeButton = useRef(null);
   const likeButton = useRef(null);
@@ -34,8 +36,6 @@ const HomeScreen = ({navigation}) => {
 
   const handleOnSwipedAllCards = () => {
     setSwipedAllCards(true);
-    setLoadingF();
-    getCardsF(page);
   };
   const handleOnSwipedLeft = () => swiperRef.current.swipeLeft();
   const handleOnSwipedRight = () => swiperRef.current.swipeRight();
@@ -58,6 +58,9 @@ const HomeScreen = ({navigation}) => {
     setCurrentIndex(index + 2);
     dislikeButton.current.reset();
     likeButton.current.reset();
+    if (cards.length - index == 5) {
+      getCardsF(page);
+    }
   };
 
   const handleOnSwipedLeftCallback = index => {
@@ -89,6 +92,7 @@ const HomeScreen = ({navigation}) => {
           <Text
             style={[
               styles.headerLeftButtonText,
+              {color: colors.red},
               !previous && styles.disableText,
             ]}>
             Undo
@@ -98,7 +102,7 @@ const HomeScreen = ({navigation}) => {
         <TouchableOpacity
           style={styles.headerRightButton}
           onPress={() => navigation.push('Favorite')}>
-          <FontAwesome5 name="heart" size={21} color="red" />
+          <FontAwesome5 name="heart" size={21} color={colors.red} />
         </TouchableOpacity>
       </View>
     );
@@ -136,9 +140,11 @@ const HomeScreen = ({navigation}) => {
               disableBottomSwipe={true}
               disableTopSwipe={true}
               stackSize={3}
-              stackSeparation={-50}
-              stackScale={10}
-              swipeAnimationDuration={800}
+              stackSeparation={-40}
+              stackScale={8}
+              stackAnimationFriction={7}
+              stackAnimationTension={40}
+              swipeAnimationDuration={500}
               inputRotationRange={[-width / 2, 0, width / 2]}
               outputRotationRange={['0deg', '0deg', '0deg']}
               overlayLabels={{
@@ -176,7 +182,7 @@ const HomeScreen = ({navigation}) => {
                 </Text>
                 <IconButton
                   ref={likeButton}
-                  buttonStyle={styles.fabLike}
+                  buttonStyle={[styles.fabLike, {backgroundColor: colors.red}]}
                   name="thumbs-up"
                   color="white"
                   onPress={handleOnSwipedRight}

@@ -5753,10 +5753,9 @@ react-native-codegen@^0.0.7:
     jscodeshift "^0.11.0"
     nullthrows "^1.1.1"
 
-react-native-deck-swiper@^2.0.5:
-  version "2.0.5"
-  resolved "https://registry.yarnpkg.com/react-native-deck-swiper/-/react-native-deck-swiper-2.0.5.tgz#acc6dbae31e45f3b5f1c51541664f94c3a8b00c7"
-  integrity sha512-PRDsdgAYUogMMwPWChEL/XsEpSob8CFNd9ThsvoyMV2lXd2bR4VZsHSuyVgXvqiHspGb3modbvogBpiSOZ3oHQ==
+"react-native-deck-swiper@https://github.com/curest0x1021/react-native-deck-swiper":
+  version "1.6.7"
+  resolved "https://github.com/curest0x1021/react-native-deck-swiper#9719a5bf2b8324365d37001b7e4a00959852fe53"
   dependencies:
     prop-types "15.5.10"
 

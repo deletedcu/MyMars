@@ -3,12 +3,15 @@ import {View, Text, Image, TouchableOpacity, Dimensions} from 'react-native';
 import Lightbox from 'react-native-lightbox';
 import PhotoView from 'react-native-photo-view';
 import {shape, string} from 'prop-types';
+import {useTheme} from '@react-navigation/native';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import styles from './styles';
 
 const {width, height} = Dimensions.get('window');
 
 const FavoriteItem = ({card, onPress}) => {
+  const {colors} = useTheme();
+
   const renderPhotoView = () => (
     <View style={{width, height}}>
       <PhotoView
@@ -62,7 +65,7 @@ const FavoriteItem = ({card, onPress}) => {
         </View>
         <View style={styles.buttonContainer}>
           <TouchableOpacity style={styles.button} onPress={onPress}>
-            <FontAwesome5 name="trash-alt" color="red" size={20} />
+            <FontAwesome5 name="trash-alt" color={colors.red} size={20} />
           </TouchableOpacity>
         </View>
       </View>
