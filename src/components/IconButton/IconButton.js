@@ -28,7 +28,7 @@ class IconButton extends PureComponent {
     if (Math.abs(this.previousX - x) < 10) {
       return;
     }
-    if (x == 0) {
+    if (x === 0) {
       this.pan.setValue({x: 0, y: 0});
       this.opacity = this.interpolateOpacity();
       this.animation.setValue(0);

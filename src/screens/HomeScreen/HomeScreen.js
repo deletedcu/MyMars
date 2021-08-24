@@ -59,7 +59,7 @@ const HomeScreen = ({navigation}) => {
     setCurrentIndex(index + 2);
     dislikeButton.current.reset();
     likeButton.current.reset();
-    if (cards.length - index == 5) {
+    if (cards.length - index === 5) {
       getCardsF(page);
     }
   };
