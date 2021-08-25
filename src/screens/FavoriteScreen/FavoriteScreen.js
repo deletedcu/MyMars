@@ -10,6 +10,7 @@ const FavoriteScreen = () => {
 
   useEffect(() => {
     getFavoritesF();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [favorites]);
 
   const handleOnRemove = card => {

@@ -34,6 +34,7 @@ const HomeScreen = ({navigation}) => {
     if (cards.length > 0) {
       setSwipedAllCards(false);
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [cards]);
 
   const handleOnSwipedAllCards = () => {
